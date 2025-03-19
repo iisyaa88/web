@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DripCulture - Shop</title>
+    <link rel="stylesheet" href="project.css">
+    <script>
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name, price, image });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + " has been added to the cart!");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Our Collection</h1>
+        <nav>
+            <a href="main.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="cart.html">Cart</a>
+            <a href="checkout.html">Checkout</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </header>
+
+    <section class="products">
+        <div class="row">
+            <div class="product">
+                <img src="casual.jpg" alt="T-Shirt">
+                <h3>Casual T-Shirt</h3>
+                <p>MYR 99.90</p>
+                <button onclick="addToCart('Casual T-Shirt', 99.90, 'casual.jpg')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="denim.jpg" alt="Jeans">
+                <h3>Denim Jeans</h3>
+                <p>MYR 149.90</p>
+                <button onclick="addToCart('Denim Jeans', 149.90, 'denim.jpg')">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="product">
+                <img src="croptop.jpg" alt="Crop Top">
+                <h3>Trendy Crop Top</h3>
+                <p>MYR 59.90</p>
+                <button onclick="addToCart('Crop Top', 59.90, 'croptop.jpg')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="varsity.jpg" alt="Varsity Jacket">
+                <h3>Drip Varsity</h3>
+                <p>MYR 290.90</p>
+                <button onclick="addToCart('Drip Varsity', 290.90, 'varsity.jpg')">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="product">
+                <img src="hoodie.jpg" alt="Hoodie">
+                <h3>Cozy Hoodie</h3>
+                <p>MYR 109.90</p>
+                <button onclick="addToCart('Cozy Hoodie', 109.90, 'hoodie.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="product">
+                <img src="cap.jpg" alt="Cap">
+                <h3>Star Cap</h3>
+                <p>MYR 39.90</p>
+                <button onclick="addToCart('Star Cap', 39.90, 'cap.jpg')">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
